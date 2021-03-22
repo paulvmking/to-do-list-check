@@ -19,4 +19,24 @@ button {
 		box-sizing: border-box;
 		font-size: 1.25em;
 		padding: 14px;
-	}
+    }
+    
+input {
+		flex-grow: 2;
+}
+
+.tasker-body {
+		display: block;
+		position: relative;
+		padding: 14px 40px 14px 14px;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		border-bottom: none;
+}
+
+button:hover  {
+		opacity: 1;
+}
+
+input {
+		margin-right: 10px;
+}
