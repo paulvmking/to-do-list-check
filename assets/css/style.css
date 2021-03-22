@@ -7,3 +7,16 @@ body {
 	max-width: 400px;
     margin: 0 auto;
 }
+
+.tasker-header {
+	display: inline-flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+button {
+		color: #fff;
+		box-sizing: border-box;
+		font-size: 1.25em;
+		padding: 14px;
+	}
