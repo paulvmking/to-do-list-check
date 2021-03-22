@@ -12,5 +12,9 @@
 			this.tasklist = document.getElementById("tasks");
 			this.tasklistChildren = this.tasklist.children;
 			this.errorMessage = document.getElementById("error");
-        }
+        },
+		bindEvents: function() {
+			this.addBtn.onclick = this.addTask.bind(this);
+			this.taskInput.onkeypress = this.enterKey.bind(this);
+		},
     }}) 
