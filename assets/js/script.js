@@ -16,5 +16,14 @@
 		bindEvents: function() {
 			this.addBtn.onclick = this.addTask.bind(this);
 			this.taskInput.onkeypress = this.enterKey.bind(this);
+        },
+        evalTasklist: function() {
+            var i, chkBox, delBtn;
+			for (i = 0; i < this.tasklistChildren.length; i += 1) {
+				chkBox = this.tasklistChildren[i].getElementsByTagName("input")[0];
+				chkBox.onclick = this.completeTask.bind(this, this.tasklistChildren[i], chkBox);
+				delBtn = this.tasklistChildren[i].getElementsByTagName("button")[0];
+				delBtn.onclick = this.delTask.bind(this, i);
+			}
 		},
     }}) 
