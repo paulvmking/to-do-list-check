@@ -25,5 +25,25 @@
 				delBtn = this.tasklistChildren[i].getElementsByTagName("button")[0];
 				delBtn.onclick = this.delTask.bind(this, i);
 			}
+        },
+        
+		render: function() {
+			var taskLi, taskChkbx, taskVal, taskBtn, taskTrsh;
+			taskLi = document.createElement("li");
+			taskLi.setAttribute("class", "task");
+			taskChkbx = document.createElement("input");
+			taskChkbx.setAttribute("type", "checkbox");
+			taskVal = document.createTextNode(this.taskInput.value);
+			taskBtn = document.createElement("button");
+			taskTrsh = document.createElement("i");
+			taskTrsh.setAttribute("class", "fa fa-trash");
+			taskBtn.appendChild(taskTrsh);
+
+			taskLi.appendChild(taskChkbx);
+			taskLi.appendChild(taskVal);
+			taskLi.appendChild(taskBtn);
+
+			this.tasklist.appendChild(taskLi);
+
 		},
     }}) 
