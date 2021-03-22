@@ -45,5 +45,43 @@
 
 			this.tasklist.appendChild(taskLi);
 
+        },
+        
+		completeTask: function(i, chkBox) {
+			if (chkBox.checked) {
+				i.className = "task completed";
+			} else {
+				this.incompleteTask(i);
+			}
 		},
-    }}) 
+		incompleteTask: function(i) {
+			i.className = "task";
+		},
+		enterKey: function(event) {
+			if (event.keyCode === 13 || event.which === 13) {
+				this.addTask();
+			}
+		},
+		addTask: function() {
+			var value = this.taskInput.value;
+			this.errorMessage.style.display = "none";
+
+			if (value === "") {
+				this.error();
+			} else {
+				this.render();
+				this.taskInput.value = "";
+				this.evalTasklist();
+			}
+		},
+		delTask: function(i) {
+			this.tasklist.children[i].remove();
+			this.evalTasklist();
+		},
+		error: function() {
+			this.errorMessage.style.display = "block";
+		}
+	};
+
+	tasker.init();
+}()); 
